@@ -1,0 +1,14 @@
+$padding-element: 1rem;
+$font-size-element: 1rem;
+$quantity-elemeent: 3;
+$witdh-element: 220px;
+$border-element: 1px;
+$padding-after: 10px;
+$width-navigation: calc((($font-size-element) + ($padding-element)*2 + ($border-element))*($quantity-elemeent) + ($border-element));
+$height-after: calc(($font-size-element)*0.9 + ($padding-after)*2);
+$background-after: rgb(95, 158, 160);
+$color-after: rgb(255, 255, 240);
+$background-li: rgb(176, 196, 222);
+$color-a: rgb(224, 255, 255);
+$gradient-f: rgb(176, 196, 222);
+$gradient-g: rgb(175, 238, 238);

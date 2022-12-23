@@ -1,0 +1,56 @@
+@import 'mixin_style2';
+@import 'vars2';
+
+h3 {
+    margin: $margin_h3;
+}
+
+form {
+    display: flex;
+    gap: $gap_content;
+    align-items: center;
+
+    >div.radio_button {
+        display: flex;
+        align-items: center;
+        gap: $gap_content;
+
+        input[type="radio"] {
+            display: none;
+        }
+        
+        >div {
+            display: flex;
+            gap: $gap_content*0.5;
+            align-items: center;
+        }
+
+        >div:first-of-type::after {
+            content: 'Male';
+        }
+
+        >div:last-of-type::after {
+            content: 'Female';
+        }
+        .one_button {
+            display: flex;
+            box-sizing: border-box;
+            border: 1px solid #41AD49;
+            width: $height-width-label-radio;
+            height: $height-width-label-radio;
+            border-radius: 50%;
+            background-color: #fff;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input[type="radio"]:checked+.one_button {
+            >div {
+                width: 0.7*$height-width-label-radio;
+                height: 0.7*$height-width-label-radio;
+                border-radius: 50%;
+                background-color: #41AD49;
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@import 'vars3';
+@import 'mixins3';
+
+.regisration {
+    display: flex;
+    flex-flow: column nowrap;
+    width: $width-registration-personal;
+    gap: $gap_row_inf;
+
+    h2 {
+        margin: 0;
+    }
+
+    .user_name,
+    .user_email,
+    .user_password {
+        display: flex;
+        gap: 1vw;
+
+        label {
+            width: $width-height-icons;
+            height: $width-height-icons;
+            background-image: url(img/username.png);   
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        input {
+            @include input_one;
+        }
+    }
+
+    .user_email {
+        label {
+            background-image: url(img/email.png);
+        }
+    }
+
+    .user_password {
+        label{
+            background-image: url(img/pswd.png);
+            flex-shrink: 0;
+        }
+
+        div {
+            display: flex;
+            flex-grow: 1;
+            gap: 2vw;
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .regisration {
+        width:  auto;
+        gap: calc($gap_row_inf/2);
+    }
+}
+
+@media (max-width: 600px) {
+    .regisration {
+        width:  auto;
+        gap: calc($gap_row_inf/2);
+
+        .user_name,
+        .user_email,
+        .user_password {
+            gap: 2vw;
+        }
+
+        .user_password {
+            >div {
+                flex-direction: column;
+
+                input {
+                    height: $width-height-icons;
+                }
+            }
+        }
+    }
+}

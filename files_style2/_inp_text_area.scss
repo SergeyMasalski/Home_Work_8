@@ -1,0 +1,13 @@
+@import 'mixin_style2';
+@import 'vars2';
+
+h3 {
+    margin: $margin_h3;
+}
+
+textarea {
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+    padding: 1rem;
+}

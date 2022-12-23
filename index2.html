@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание №2</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <!-- Naigation -->
+    <ul class="navig">
+        <li>
+            <a href="index.html" target="_blank">Задание №1</a>
+        </li>
+        <li>
+            <a href="Index2.html" target="_blank">Задание №2</a>
+        </li>
+        <li>
+            <a href="Index3.html" target="_blank">Задание №3</a>
+        </li>
+    </ul>
+    <!-- main content -->
+    <div class="maincontainer">
+        <div class="container">
+            <div class="inp_text">
+                <h3>Inputs</h3>
+                <form>
+                    <input type="text" name="val_text" id="notext" placeholder="Enter some text">
+                    <input type="text" name="val_text" value="valid text" id="valid">
+                    <input type="text" name="val_text" value="invalid text" id="invalid">
+                </form>
+            </div>
+            <div class="inp_check">
+                <h3>Check boxes</h3>
+                <form>
+                    <div class="box_1">
+                        <input type="checkbox" name="" id="subscribe_1">
+                        <label for="subscribe_1" class="sub_1">
+                            <div></div>
+                        </label>
+                    </div>
+                    <div class="box_2">
+                        <input type="checkbox" name="" id="subscribe_2" checked>
+                        <label for="subscribe_2" class="sub_2">
+                            <div></div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="inp_radio">
+                <h3>Radio buttons</h3>
+                <form>
+                    <div>Gender:</div>
+                    <div class="radio_button">
+                        <div>
+                            <input type="radio" name="Gender" value="Male" id="first_rad">
+                            <label for="first_rad" class="one_button">
+                                <div></div>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="Gender" value="Female" id="second_rad">
+                            <label for="second_rad" class="one_button">
+                                <div></div>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="inp_button">
+                <h3>Buttons</h3>
+                <form>
+                    <input type="button" value="Active">
+                    <input type="button" value="Hover">
+                    <input type="button" value="Danger">
+                    <input type="button" value="Hover">
+                    <input type="button" value="Disablet" disabled>
+                    <input type="button" value="+">
+                    <input type="button" value="-">
+                </form>
+            </div>
+            <div class="text_ar">
+                <h3>Text area</h3>
+                <textarea name="text_area" id="text_area" cols="60" rows="8" placeholder="Enter some text..."></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+body {
+    margin: 0
+}
+
+@import 'navigation/navigation';
+
+.maincontainer {
+    @import 'files_style1/vars1';
+
+    display: flex;
+    justify-content: center;
+
+    .container {
+        background-color: #F5F5F5;
+        box-sizing: border-box;
+        padding: 5vh 4vw;
+        width: 45vw;
+        min-width: 690px;
+        
+        
+        .card {
+            background: url(img/moon_flag.png), #9FCDCD;
+            background-position: 130% 150%;
+            background-repeat: no-repeat;
+            background-size: 50%;
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            gap: 3vh;
+            flex-flow: column nowrap;
+            padding: $padding-card;
+            min-width: 568px;
+
+            .details {
+                color: #fff;
+                background-color: #DB6423;
+                box-sizing: border-box;
+                font-size: 1.2rem;
+                padding: 0.5rem $padding-details;
+                transform: translate($translate-details, 0);
+                margin-right: 4.5vw;
+            }
+
+            form {
+                padding: 0 40% 0 0;
+            }
+
+            label {
+                color: rgb(80, 80, 80);
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 2vh;
+
+                input {
+                    outline: none;
+                    background-color: #A9D2D2;
+                    border: none;
+                    border-bottom: 1px solid black;
+                    padding: 0.5rem;
+
+                }
+
+                input::placeholder {
+                    font-size: 1.1rem;
+                    vertical-align: middle;
+                    transform: translate(0, 0.05rem);
+                }
+            }
+
+            .date_year_cvv {
+                display: flex;
+                justify-content: space-between;
+                
+                label {
+                    width: 30%;
+                }
+
+                div {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

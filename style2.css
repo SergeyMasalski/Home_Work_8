@@ -1,0 +1,319 @@
+@charset "UTF-8";
+.navig {
+  display: flex;
+  flex-flow: column nowrap;
+  position: fixed;
+  width: 220px;
+  top: calc(0.9rem + 20px);
+  right: calc(0px - (0.9rem + 20px));
+  z-index: 1;
+  transform: translate(100%, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  animation-name: nav1;
+  animation-delay: 3s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  transition: 1s;
+}
+.navig li {
+  display: inline-flex;
+  flex-flow: row wrap;
+  border: 1px solid #888888;
+  background-color: rgb(176, 196, 222);
+  text-align: center;
+  box-sizing: border-box;
+  padding: 1rem 0;
+  align-items: center;
+  flex: 0 0 auto;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.navig li:not(:nth-of-type(1)) {
+  border-top: none;
+}
+.navig li:hover {
+  background: radial-gradient(center, circle farthest-side, rgb(176, 196, 222), rgb(175, 238, 238));
+  background: -webkit-radial-gradient(center, circle farthest-side, rgb(176, 196, 222), rgb(175, 238, 238));
+  background: -o-radial-gradient(center, circle farthest-side, rgb(176, 196, 222), rgb(175, 238, 238));
+  background: -moz-radial-gradient(center, circle farthest-side, rgb(176, 196, 222), rgb(175, 238, 238));
+}
+.navig a {
+  height: 100%;
+  width: 100%;
+  display: block;
+  color: rgb(224, 255, 255);
+  text-decoration: none;
+}
+
+.navig::after {
+  content: "Проверка заданий";
+  width: calc((3rem + 1px) * 3 + 1px);
+  background-color: rgb(95, 158, 160);
+  display: block;
+  position: relative;
+  left: calc(0px - ((3rem + 1px) * 3 + 1px));
+  transform-origin: 100% 0;
+  transform: rotate(90deg);
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  color: rgb(255, 255, 240);
+  box-sizing: border-box;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  line-height: 0.9rem;
+}
+
+.navig:hover {
+  transform: translate(0, 0);
+  transition: 1s;
+}
+
+@keyframes nav1 {
+  0% {
+    right: calc(0px - (0.9rem + 20px));
+  }
+  100% {
+    right: 0;
+    position: fixed;
+  }
+}
+.maincontainer {
+  display: flex;
+  justify-content: center;
+}
+.maincontainer .container {
+  background-color: #F5F5F5;
+  display: flex;
+  gap: 3vh;
+  flex-flow: column nowrap;
+  font-size: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+  padding: 2vh 5vw 2vh 2vw;
+}
+.maincontainer .container .inp_text h3 {
+  margin: 0.5rem 0;
+}
+.maincontainer .container .inp_text form input {
+  padding: 0.5rem;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid rgb(180, 180, 180);
+  outline: none;
+}
+.maincontainer .container .inp_text form input:nth-of-type(2) {
+  background: url(img/valid.png), #fff;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 0.8rem;
+}
+.maincontainer .container .inp_text form input:nth-of-type(3) {
+  background: url(img/invalid.png), #fff;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  background-size: 0.8rem;
+}
+.maincontainer .container .inp_check h3 {
+  margin: 0.5rem 0;
+}
+.maincontainer .container .inp_check form {
+  display: flex;
+  gap: 1vw;
+}
+.maincontainer .container .inp_check form .box_1 {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.3rem;
+}
+.maincontainer .container .inp_check form .box_1 input[type=checkbox] {
+  display: none;
+}
+.maincontainer .container .inp_check form .box_1 .sub_1 {
+  display: flex;
+  box-sizing: border-box;
+  width: 32px;
+  height: 16px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid green;
+  overflow: hidden;
+  align-items: center;
+  position: relative;
+}
+.maincontainer .container .inp_check form .box_1 .sub_1 > div {
+  background-color: green;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  left: 1px;
+}
+.maincontainer .container .inp_check form .box_1 input[type=checkbox]:checked + .sub_1 {
+  border: 1px solid #E44061;
+}
+.maincontainer .container .inp_check form .box_1 input[type=checkbox]:checked + .sub_1 > div {
+  background-color: #E44061;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  left: 17px;
+}
+.maincontainer .container .inp_check form .box_1::after {
+  content: "Subscribe";
+  font-size: 0.9rem;
+}
+.maincontainer .container .inp_check form .box_2 {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.3rem;
+}
+.maincontainer .container .inp_check form .box_2 input[type=checkbox] {
+  display: none;
+}
+.maincontainer .container .inp_check form .box_2 .sub_2 {
+  display: flex;
+  box-sizing: border-box;
+  width: 32px;
+  height: 16px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid green;
+  overflow: hidden;
+  align-items: center;
+  position: relative;
+}
+.maincontainer .container .inp_check form .box_2 .sub_2 > div {
+  background-color: green;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  left: 1px;
+}
+.maincontainer .container .inp_check form .box_2 input[type=checkbox]:checked + .sub_2 {
+  border: 1px solid #E44061;
+}
+.maincontainer .container .inp_check form .box_2 input[type=checkbox]:checked + .sub_2 > div {
+  background-color: #E44061;
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  left: 17px;
+}
+.maincontainer .container .inp_check form .box_2::after {
+  content: "Subscribe";
+  font-size: 0.9rem;
+}
+.maincontainer .container .inp_radio h3 {
+  margin: 0.5rem 0;
+}
+.maincontainer .container .inp_radio form {
+  display: flex;
+  gap: 0.6vw;
+  align-items: center;
+}
+.maincontainer .container .inp_radio form > div.radio_button {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+}
+.maincontainer .container .inp_radio form > div.radio_button input[type=radio] {
+  display: none;
+}
+.maincontainer .container .inp_radio form > div.radio_button > div {
+  display: flex;
+  gap: 0.3vw;
+  align-items: center;
+}
+.maincontainer .container .inp_radio form > div.radio_button > div:first-of-type::after {
+  content: "Male";
+}
+.maincontainer .container .inp_radio form > div.radio_button > div:last-of-type::after {
+  content: "Female";
+}
+.maincontainer .container .inp_radio form > div.radio_button .one_button {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #41AD49;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+.maincontainer .container .inp_radio form > div.radio_button input[type=radio]:checked + .one_button > div {
+  width: 12.6px;
+  height: 12.6px;
+  border-radius: 50%;
+  background-color: #41AD49;
+}
+.maincontainer .container .inp_button h3 {
+  margin: 0.5rem 0;
+}
+.maincontainer .container .inp_button form {
+  display: flex;
+  gap: 0.7vw;
+}
+.maincontainer .container .inp_button form input[type=button] {
+  box-sizing: border-box;
+  display: flex;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  line-height: 1rem;
+}
+.maincontainer .container .inp_button form input[type=button]:last-of-type,
+.maincontainer .container .inp_button form input[type=button]:nth-last-of-type(2) {
+  height: calc(2px + 1rem + 1rem);
+  width: calc(2px + 1rem + 1rem);
+  border-radius: 50%;
+  font-weight: bold;
+}
+.maincontainer .container .inp_button form input[type=button]:first-of-type {
+  background-color: #41AD49;
+}
+.maincontainer .container .inp_button form input[type=button]:nth-of-type(2) {
+  background-color: #2C7731;
+}
+.maincontainer .container .inp_button form input[type=button]:nth-of-type(3) {
+  background-color: #E44061;
+}
+.maincontainer .container .inp_button form input[type=button]:nth-of-type(4) {
+  background-color: #97293F;
+}
+.maincontainer .container .inp_button form input[type=button]:nth-of-type(5) {
+  background-color: #808080;
+}
+.maincontainer .container .inp_button form input[type=button]:nth-last-of-type(2) {
+  background-color: #41AD49;
+}
+.maincontainer .container .inp_button form input[type=button]:last-of-type {
+  background-color: #E44061;
+}
+.maincontainer .container .text_ar h3 {
+  margin: 0.5rem 0;
+}
+.maincontainer .container .text_ar textarea {
+  outline: none;
+  resize: none;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=style2.css.map */

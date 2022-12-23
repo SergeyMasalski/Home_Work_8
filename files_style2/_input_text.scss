@@ -1,0 +1,30 @@
+@import 'mixin_style2';
+@import 'vars2';
+
+h3 {
+    margin: $margin_h3;
+}
+
+form {
+    input {
+        padding: 0.5rem;
+        border-radius: 3px;
+        box-sizing: border-box;
+        border: 1px solid rgb(180, 180, 180);
+        outline: none;
+    }
+
+    input:nth-of-type(2) {
+        background: url(img/valid.png), #fff;
+        background-repeat: no-repeat;
+        background-position: 95% center;
+        background-size: 0.8rem;
+    }
+
+    input:nth-of-type(3) {
+        background: url(img/invalid.png), #fff;
+        background-repeat: no-repeat;
+        background-position: 95% center;
+        background-size: 0.8rem;
+    }
+}

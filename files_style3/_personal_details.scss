@@ -1,0 +1,59 @@
+@import 'vars3';
+@import 'mixins3';
+
+.personal_inf {
+    display: flex;
+    flex-flow: column nowrap;
+    width: $width-registration-personal;
+    gap: $gap_row_inf;
+
+    h2 {
+        margin: 0;
+    }
+
+    .name_lastname,
+    .gender_date {
+        display: flex;
+        gap: 2vw;
+        height: $width-height-icons;
+
+        input,
+        select {
+            flex-basis: 45%;
+            @include input_one;
+        }
+    }
+
+    .gender_date {
+        input.date::placeholder {
+            color: black;
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .personal_inf {
+        flex-grow: 1;
+        width: auto;
+        gap: calc($gap_row_inf/2);
+    }
+}
+
+@media (max-width: 600px) {
+    .personal_inf {
+        flex-grow: 1;
+        width: auto;
+        gap: calc($gap_row_inf/2);
+
+        .name_lastname,
+        .gender_date {
+            flex-direction: column;
+            flex-shrink: 0;
+            height: auto;
+
+            >input {
+                flex-basis: $width-height-icons;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+// margin H3
+$margin_h3: 0.5rem 0;
+
+// checkboxes style
+$border-checkbox: 1px;
+$height-checkbox: 16px;
+$width-checkbox: $height-checkbox*2;
+$height-width-checkbox-div: $height-checkbox - $border-checkbox*4;
+
+// radio style 
+$height-width-label-radio: 18px;
+$gap_content: 0.6vw;
+
+// button styles 
+$padding_top_bot: 0.5rem;
+$padding_left_right: 1rem;
+$height_width_plus: calc(2px + 1rem + $padding_top_bot*2);

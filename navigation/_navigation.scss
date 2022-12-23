@@ -1,0 +1,89 @@
+@import 'vars_navigation';
+
+.navig {
+    display: flex;
+    flex-flow: column nowrap;
+    position: fixed;
+    width: ($witdh-element);
+    top: $height-after;
+    right: calc(0px - ($height-after));
+    z-index: 1;
+    transform: translate(100%, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    animation-name: nav1;
+    animation-delay: 3s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    transition: 1s;
+
+    li {
+        display: inline-flex;
+        flex-flow: row wrap;
+        border: ($border-element) solid #888888;
+        background-color: ($background-li);
+        text-align: center;
+        box-sizing: border-box;
+        padding: ($padding-element) 0;
+        align-items: center;
+        flex: 0 0 auto;
+        font-size: ($font-size-element);
+        line-height: ($font-size-element);
+    }
+
+    li:not(:nth-of-type(1)) {
+        border-top: none;
+    }
+
+    li:hover {
+        background:radial-gradient(center,circle farthest-side, ($gradient-f), ($gradient-g));
+        background:-webkit-radial-gradient(center,circle farthest-side, ($gradient-f), ($gradient-g));
+        background:-o-radial-gradient(center,circle farthest-side, rgb(176, 196, 222), rgb(175, 238, 238));
+        background:-moz-radial-gradient(center,circle farthest-side,rgb(176, 196, 222), rgb(175, 238, 238));
+    }
+
+    a {
+        height: 100%;
+        width: 100%;
+        display: block;
+        color: ($color-a);
+        text-decoration: none;
+    }
+}
+
+.navig::after {
+    content: "Проверка заданий";
+    width: ($width-navigation);
+    background-color: ($background-after);
+    display: block;
+    position: relative;
+    left: calc(0px - ($width-navigation));
+    transform-origin: 100% 0;
+    transform: rotate(90deg);
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    color: ($color-after);
+    box-sizing: border-box;
+    padding: ($padding-after) 0;
+    font-size: calc(($font-size-element)*0.9);
+    line-height: calc(($font-size-element)*0.9);
+}
+
+.navig:hover {
+    transform: translate(0,0);
+    transition: 1s;
+}
+
+@keyframes nav1 {
+    0% {
+        right: calc(0px - ($height-after));
+    }
+    100% {
+        right: 0;
+        position: fixed;
+    }
+}

@@ -1,0 +1,94 @@
+@import 'mixin_style2';
+@import 'vars2';
+
+h3 {
+    margin: $margin_h3;
+}
+
+form {
+    display: flex;
+    gap: 1vw;
+
+    .box_1 {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.3rem;
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        .sub_1 {
+            display: flex;
+            box-sizing: border-box;
+            width: $width-checkbox;
+            height: $height-checkbox;
+            background: #fff;
+            border-radius: $border-checkbox*3;
+            border: $border-checkbox solid green;
+            overflow: hidden;
+            align-items: center;
+            position: relative;
+
+            >div {
+                background-color: green;
+                height: $height-width-checkbox-div;
+                width: $height-width-checkbox-div;
+                border-radius: $border-checkbox*3;
+                overflow: hidden;
+                position: relative;
+                left: $border-checkbox;
+            }
+        }
+
+        input[type=checkbox]:checked+.sub_1 {
+            border: $border-checkbox solid #E44061;
+
+            >div{
+                background-color: #E44061;
+                height: $height-width-checkbox-div;
+                width: $height-width-checkbox-div;
+                border-radius: $border-checkbox*3;
+                overflow: hidden;
+                position: relative;
+                left: $border-checkbox*5 + $height-width-checkbox-div;
+            }
+        }
+    }
+
+    .box_1::after {
+        content: 'Subscribe';
+        font-size: 0.9rem;
+    }
+    
+    .box_2 {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.3rem;
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        .sub_2 {
+            @include label;
+
+            >div {
+                @include label_div;
+            }
+        }  
+
+        input[type=checkbox]:checked+.sub_2 {
+            border: $border-checkbox solid #E44061;
+
+            >div{
+                @include checkbox_checked;
+            }
+        }
+    }
+
+    .box_2::after {
+        content: 'Subscribe';
+        font-size: 0.9rem;
+    }
+}
